@@ -1,10 +1,9 @@
-public class samplename {
-    public static void main(String[] args) {
+FROM openjdk:11-jdk-slim
 
-        // Declare a variable to hold the name
-        String name = "tejaswini";
+WORKDIR /app
 
-        // Print the name to the console
-        System.out.println("Hello, my name is " + name);
-    }
-}
+COPY . .
+
+RUN javac samplename.java
+
+CMD ["java", "samplename"]
